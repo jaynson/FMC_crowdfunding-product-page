@@ -1,0 +1,289 @@
+:root {
+  font-size: $default-text-size;
+}
+
+body {
+  line-height: 1.5;
+  // font-family: 'Fraunces', sans-serif;
+  font-size: 1.6rem;
+  font-family: 'Commissioner', sans-serif;
+  color: $color-neutral-dark-gray;
+
+  .fw-300 {
+    font-weight: 300;
+  }
+  .fw-400 {
+    font-weight: 400;
+  }
+  .fw-500 {
+    font-weight: 500;
+  }
+  .fw-600 {
+    font-weight: 600;
+  }
+  .fw-700 {
+    font-weight: 700;
+  }
+
+  ////BUTTON
+  .btn {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    &-btp,
+    &-reward,
+    &-complete,
+    &-continue {
+      color: white;
+    }
+    &-bookmark {
+      color: $color-neutral-dark-gray;
+      font-weight: 700;
+
+      &.marked {
+        color: $color-primary-dark-cyan;
+      }
+    }
+    @include respond(600) {
+      font-size: 1.4rem;
+    }
+  }
+
+  ////CORE SERVICES
+
+  ////FOOTER
+
+  ////FORM
+  .pledge-form {
+    // PLEDGE FORM INPUT
+    &__input {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    // DOLLAR SYMBOL
+    .dollar-sign {
+      font-size: 1.3rem;
+    }
+  }
+
+  ////HEADER
+  .header-nav {
+    &__link {
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      @include hover {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  ////MENU NAV
+  .menu-nav {
+    &__link {
+      color: $color-neutral-black;
+
+      font-size: 1.6rem;
+      cursor: pointer;
+      @include hover {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  ////MODAL
+  .modal {
+    &__title {
+      color: $color-neutral-black;
+      font-size: 2.5rem;
+
+      @include respond(600) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  ////MODAL COMPLETE
+  .modal-complete {
+    &__title {
+      color: $color-neutral-black;
+      font-size: 3rem;
+
+      @include respond(600) {
+        font-size: 2.7rem;
+      }
+    }
+    &__description {
+      text-align: center;
+      line-height: 1.7;
+    }
+  }
+
+  ////PLEDGES
+  .pledges {
+    &__title {
+      color: $color-neutral-black;
+      font-size: 2rem;
+      @include respond(600) {
+        font-size: 1.9rem;
+      }
+    }
+
+    &__project-description--1,
+    &__project-description--2 {
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ////PLEDGE BOX
+  .main-pledge-box {
+    //Quantity
+    &__quantity {
+      .figure {
+        color: $color-neutral-black;
+        font-size: 3.5rem;
+        line-height: 1;
+        @include respond(600) {
+          font-size: 2.7rem;
+        }
+      }
+
+      .left-text {
+        color: $color-neutral-dark-gray;
+        @include respond(600) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    // Min-pledge
+    &__min-pledge {
+      color: $color-primary-moderate-cyan;
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+
+    //Summary
+    &__summary {
+      color: $color-neutral-dark-gray;
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+
+    //Title
+    &__title {
+      color: $color-neutral-black;
+      font-size: 1.8rem;
+      @include respond(600) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  ////PLEDGE BOX
+  .modal-pledge-box {
+    //Quantity
+    &__quantity {
+      .figure {
+        color: $color-neutral-black;
+        font-size: 2rem;
+        line-height: 1;
+
+        @include respond(680) {
+          font-size: 1.9rem;
+        }
+      }
+
+      .left-text {
+        color: $color-neutral-dark-gray;
+        @include respond(600) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    // Min-pledge
+    &__min-pledge {
+      color: $color-primary-moderate-cyan;
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+
+    //Summary
+    &__summary {
+      color: $color-neutral-dark-gray;
+      font-size: 1.6rem;
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+
+    //Title
+    &__title {
+      // color: $color-neutral-black;
+      color: currentColor;
+      font-size: 1.7rem;
+      line-height: 1;
+      @include respond(600) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  ////PRODUCT
+  .product {
+    text-align: center;
+    &__title {
+      font-size: 2.8rem;
+      color: $color-neutral-black;
+
+      @include respond(600) {
+        font-size: 2.4rem;
+      }
+      @include respond(320) {
+        font-size: 2rem;
+      }
+    }
+    &__summary {
+      color: $color-neutral-dark-gray;
+      @include respond(600) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ////PROJECT STATS
+  .project-stats {
+    color: $color-neutral-dark-gray;
+
+    &__text {
+      font-size: 1.6rem;
+      @include respond(600) {
+        font-size: 1.4rem;
+      }
+    }
+    &__fig {
+      font-size: 3.5rem;
+      color: $color-neutral-black;
+      line-height: 1.4;
+      @include respond(600) {
+        font-size: 2.8rem;
+      }
+      @include respond(600) {
+        font-size: 2.4rem;
+      }
+    }
+
+    &__units {
+      text-align: center;
+    }
+  }
+}

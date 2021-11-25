@@ -1,0 +1,644 @@
+///////////////////////////////////////////////////////////
+////        BOOKMARK
+.bookmark {
+  margin-left: auto;
+  display: flex;
+  cursor: pointer;
+
+  @include hover {
+    &:hover .bookmark__svg circle {
+      fill: $color-neutral-dark-gray;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        BUTTON
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &-reward,
+  &-btp,
+  &-complete,
+  &-continue {
+    background-color: $color-primary-moderate-cyan;
+    @include hover {
+      &:hover {
+        background-color: $color-primary-dark-cyan;
+      }
+    }
+  }
+}
+
+.btn-rounded {
+  border-radius: 4rem;
+}
+
+// Back this Project Button
+.btn-btp {
+  padding: 0 4rem;
+  @include respond(600) {
+    padding: 0 2.5rem;
+  }
+  @include respond(330) {
+    padding: 0 1.6rem;
+  }
+}
+
+// Bookmark Button
+.btn-bookmark {
+  background-color: lighten($color-neutral-dark-gray, 49%);
+  padding-right: 2.2rem;
+  padding-left: 6.5rem;
+  margin-left: -5rem;
+  //   height: 5.6rem;
+  @include respond(600) {
+    padding-left: 5.5rem;
+  }
+  @include respond(400) {
+    display: none;
+  }
+}
+
+// Complete Button
+.btn-complete {
+  padding: 1.5rem 3rem;
+}
+
+// Continue Button
+.btn-continue {
+  padding: 1.1rem 2.3rem;
+  @include respond(330) {
+    padding: 1.1rem 1.8rem;
+  }
+  @include respond(300) {
+    padding: 1.1rem 1.5rem;
+  }
+}
+
+//Select Reward Button
+.btn-reward {
+  width: 15rem;
+  height: 4.7rem;
+  @include respond(600) {
+    width: 13rem;
+  }
+  @include respond(375) {
+    margin-top: 2rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        CALL TO ACTION
+.cta {
+  display: flex;
+  align-self: stretch;
+}
+
+///////////////////////////////////////////////////////////
+////        CARD CONTAINER
+.card-container {
+  background-color: white;
+  box-shadow: 0 1rem 4rem rgba(123, 134, 128, 0.1);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 5rem 4.7rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  @include respond(640) {
+    padding: 3.5rem 4.7rem;
+  }
+
+  @include respond(600) {
+    padding: 3.5rem 2.5rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        DROPDOWN
+
+///////////////////////////////////////////////////////////
+////          FEATURED
+
+///////////////////////////////////////////////////////////
+////        FOOTER
+
+///////////////////////////////////////////////////////////
+////        HEADER
+.header {
+  &-nav {
+    margin-left: auto;
+
+    @include respond(600) {
+      display: none;
+    }
+  }
+
+  // Header Nav List
+  &-nav__list {
+    display: flex;
+    list-style: none;
+  }
+
+  //Header Nav Item
+  &-nav__item {
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        ICONS
+.bookmark__svg {
+  position: relative;
+  z-index: 10;
+
+  &.marked circle {
+    fill: $color-primary-dark-cyan;
+  }
+
+  &.marked path {
+    fill: white;
+  }
+}
+
+// HAMBURGER ICON
+.menu-nav__icon {
+  width: 1.6rem;
+  height: 1.5rem;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  fill: whitesmoke;
+
+  @include hover {
+    &:hover > * {
+      fill: $color-primary-moderate-cyan;
+    }
+  }
+
+  &--close {
+    display: none;
+  }
+
+  &.activated {
+    z-index: 50;
+  }
+
+  &.activated &--hamburger {
+    display: none;
+  }
+  &.activated &--close {
+    display: block;
+  }
+
+  @include respond(600) {
+    display: block;
+  }
+}
+
+.svg--round {
+  max-width: 5.6rem;
+  max-height: 5.6rem;
+  width: 100%;
+  height: 100%;
+
+  @include respond(600) {
+    max-width: 4.8rem;
+    max-height: 4.8rem;
+  }
+}
+
+.modal-close__svg {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+
+  @include hover {
+    &:hover * {
+      opacity: 0.7;
+    }
+  }
+}
+.modal-check__svg {
+  max-width: 9rem;
+  max-height: 9rem;
+  margin-bottom: 4.5rem;
+  //   align-self: flex-end;
+  //   cursor: pointer;
+}
+
+///////////////////////////////////////////////////////////
+////        LOGO
+.header__svg {
+  max-width: 12.8rem;
+  max-height: 2rem;
+}
+
+.mastercraft-logo {
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+///////////////////////////////////////////////////////////
+////        MENU NAV
+.menu-nav {
+  &__overlay {
+    position: absolute;
+    min-height: 210rem;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-neutral-black, 0.3);
+    overflow: auto;
+    opacity: 0;
+    z-index: -20;
+
+    &.show {
+      opacity: 1;
+      z-index: 20;
+    }
+  }
+
+  &__container {
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    @include margin-centralize;
+    width: 90%;
+    // right: 0;
+    top: 9rem;
+  }
+
+  // MENU NAV LIST
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    list-style: none;
+  }
+
+  //MENU NAV ITEM
+  &__item {
+    padding: 2rem;
+    &:not(:last-child) {
+      border-bottom: 0.15rem solid rgba($color-neutral-dark-gray, 0.25);
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+////       MAIN PLEDGE BOX
+.main-pledge-box {
+  &__content {
+    padding: 2.5rem 3rem;
+  }
+
+  // FOOTER SECTION
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+
+    @include respond(375) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  // HEADER SECTION
+  &__header {
+    margin-bottom: 2.5rem;
+  }
+
+  // PLEDGE BOX TITLE
+  &__title {
+    margin-right: auto;
+    @include respond(500) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  // QUANTITY
+  &__quantity {
+    margin-right: auto;
+  }
+
+  // // MIN PLEDGE
+  // &__min-pledge {
+  //   // align-items: flex-start;
+  // }
+}
+
+///////////////////////////////////////////////////////////
+////          MODAL PLEDGE BOX
+.modal-pledge-box {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    padding: 3rem 2.8rem;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+
+    @include respond(600) {
+      padding: 3rem 1.8rem;
+    }
+  }
+
+  // HEADER SECTION
+  &__header {
+    margin-bottom: 1.8rem;
+    margin-right: auto;
+
+    @include respond(550) {
+      order: 1;
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+
+  // LABEL
+  &__label {
+    // padding-left: 4rem;
+    // margin-left: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: $color-neutral-black;
+    flex: 0 0 100%;
+    @include hover {
+      &:hover {
+        color: $color-primary-moderate-cyan;
+      }
+    }
+  }
+
+  // QUANTITY
+  &__quantity {
+    align-self: baseline;
+    @include respond(550) {
+      order: 3;
+      margin-top: 3rem;
+    }
+  }
+
+  &__title {
+    margin-right: 2rem;
+    @include respond(500) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  //RULE
+  .rule {
+    border-top: 0.15rem solid rgba($color-neutral-dark-gray, 0.18);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 110%;
+    left: -5%;
+    top: 80%;
+    position: absolute;
+  }
+
+  // FOOTER
+  &__footer {
+    // border-top: 0.15rem solid lighten($color-neutral-dark-gray, 35%);
+    border-top: 0.15rem solid rgba($color-neutral-dark-gray, 0.18);
+    flex: 0 0 100%;
+    padding: 2rem 2.8rem;
+    display: none;
+
+    .modal-cta {
+      display: flex;
+      position: relative;
+    }
+
+    .btn {
+      margin-left: 2rem;
+      @include respond(500) {
+        margin-left: 1rem;
+      }
+    }
+
+    @include respond(600) {
+      padding: 2rem 1.8rem;
+    }
+  }
+
+  ////// PLEDGE WRAPPER
+  .pledge__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 4rem;
+  }
+
+  // NONE MODAL
+  .none-modal {
+    .pledge-form {
+      margin-right: auto;
+    }
+
+    .radio-label {
+      top: 3.3rem;
+    }
+  }
+
+  //PLEDGE FORM
+  .pledge-form {
+    flex: 0 0 100%;
+    display: flex;
+    position: relative;
+
+    // PLEDGE FORM LABEL
+    &__label {
+      margin-right: auto;
+      align-self: center;
+      @include respond(450) {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    // PLEDGE FORM INPUT
+    &__input {
+      padding: 0 1.5rem;
+      max-width: 9rem;
+      width: 100%;
+      border: 0.19rem solid rgba($color-neutral-dark-gray, 0.25);
+      //   border-color: $color-neutral-dark-gray;
+      &:focus {
+        border-color: $color-primary-moderate-cyan;
+        outline: none;
+      }
+    }
+
+    // DOLLAR SYMBOL
+    .dollar-sign {
+      align-self: center;
+      position: absolute;
+      // right: 18.3rem;
+      left: 1.5rem;
+    }
+
+    @include respond(450) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // Remove spinners
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // MAIN
+
+  &__main {
+    @include respond(550) {
+      order: 2;
+    }
+  }
+  // &__main.selected {
+  //   // margin-bottom: 2.5rem;
+  // }
+}
+
+////        Radio-Button
+.modal__radio-input {
+  display: none;
+
+  opacity: 0;
+  align-self: stretch;
+}
+
+// LABEL
+.radio-label {
+  position: absolute;
+  //   left: -4.69rem;
+  // left: 2.8rem;
+  top: 3.3rem;
+  cursor: pointer;
+  @include respond(500) {
+    top: 4rem;
+  }
+}
+
+.modal__radio-input:checked + .modal-pledge-box {
+  border-color: $color-primary-moderate-cyan;
+}
+
+.modal__radio-input:checked
+  + .modal-pledge-box
+  .radio-label
+  .modal__custom-radio::after {
+  opacity: 1;
+}
+.modal__radio-input:checked
+  + .modal-pledge-box
+  .radio-label
+  .modal__custom-radio {
+  border-color: $color-primary-moderate-cyan;
+}
+
+.modal__radio-input:checked + .modal-pledge-box .modal-pledge-box__footer {
+  display: flex;
+  border-top-color: $color-primary-moderate-cyan;
+}
+
+.modal__radio-input:checked + .modal-pledge-box .modal-pledge-box__title {
+  color: $color-primary-moderate-cyan;
+}
+
+.modal__custom-radio {
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid $color-neutral-dark-gray;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: $color-primary-moderate-cyan;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////       PLEDGE BOX
+.pledge-box {
+  border: 0.15rem solid lighten($color-neutral-dark-gray, 35%);
+  margin-top: 2rem;
+  border-radius: 0.8rem;
+
+  // HEADER SECTION
+  &__header {
+    display: flex;
+    align-items: center;
+    @include respond(500) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  // QUANTITY
+  &__quantity {
+    display: flex;
+    align-items: center;
+    .figure {
+      margin-right: 0.6rem;
+    }
+  }
+
+  &.out-of-stock {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////       MAIN PLEDGE BOX
+
+///////////////////////////////////////////////////////////
+////        PROJECT FUND PROGRESS BAR
+.project-fund__progress {
+  width: 100%;
+  height: 1.4rem;
+  appearance: none;
+  border-radius: 2rem;
+  margin-top: 4rem;
+}
+
+::-webkit-progress-bar {
+  background-color: lighten($color-neutral-dark-gray, 49%);
+  border-radius: 2rem;
+}
+::-webkit-progress-value {
+  background-color: $color-primary-moderate-cyan;
+  border-radius: 2rem;
+}
+
+///////////////////////////////////////////////////////////

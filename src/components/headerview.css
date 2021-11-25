@@ -1,0 +1,9 @@
+.header::before{
+    background-image: url('../images/image-hero-desktop.jpg');
+}
+
+@media only screen and (max-width: 37.5em){
+    .header::before{
+        background-image: url('../images/image-hero-mobile.jpg');
+    }
+}

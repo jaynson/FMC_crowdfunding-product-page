@@ -26,7 +26,3 @@ yarn-error.log*
 README-template.md
 READMEAD.md
 style-guide.md
-/src/sass
-/src/components
-/src/hooks
-.prettierrc

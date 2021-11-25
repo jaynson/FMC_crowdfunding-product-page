@@ -1,0 +1,257 @@
+///////////////////////////////////////////////////////////
+////        CONTAINER
+
+// container
+.container {
+}
+
+// Component
+.app-component {
+  max-width: $main-component-max-width-desktop;
+  position: relative;
+  @include margin-centralize;
+
+  @include respond(600) {
+    max-width: $main-component-max-width-mobile-600px;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        HEADER
+.header {
+  height: 40rem;
+  width: 100%;
+  // background-size: 144rem 40rem;
+  position: relative;
+  // background-position: center center;
+  &::before {
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+  }
+
+  // HEADER CONTENT
+  &-content {
+    position: relative;
+    padding: 4.5rem 16.5rem 0;
+    display: flex;
+    align-items: center;
+
+    @include respond(1200) {
+      padding: 4.5rem 10rem 0;
+    }
+    @include respond(1000) {
+      padding: 4.5rem 6rem 0;
+    }
+    @include respond(600) {
+      padding: 4.5rem 3rem 0;
+      justify-content: space-between;
+    }
+  }
+}
+///////////////////////////////////////////////////////////
+////        MAIN
+.main {
+  background-color: lighten($color-neutral-dark-gray, 50%);
+
+  &-content {
+    position: relative;
+    top: -9rem;
+    max-width: 73rem;
+    @include margin-centralize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include respond(750) {
+    padding: 0 0.5rem;
+  }
+}
+///////////////////////////////////////////////////////////
+////        MAIN - Product
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // PRODUCT TITLE
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  //SUMMARY
+  &__summary {
+    margin-bottom: 3rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        MAIN - PROJECT SUMMARY
+
+.project-summary {
+}
+
+// PROJECT STATS
+.project-stats {
+  display: flex;
+  justify-content: space-between;
+
+  //FIGURE
+  &__fig {
+    display: block;
+  }
+
+  &__units {
+    align-self: center;
+    white-space: nowrap;
+  }
+
+  // TEXT DIV
+  &__text {
+    flex: 0 0 33%;
+
+    &:not(:last-child) {
+      border-right: 0.15rem solid lighten($color-neutral-dark-gray, 35%);
+      @include respond(500) {
+        border-right: none;
+        border-bottom: 0.15rem solid lighten($color-neutral-dark-gray, 35%);
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    @include respond(500) {
+      flex: 0 0 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 7rem;
+      flex-wrap: nowrap;
+    }
+  }
+
+  // Backers Div
+  &__backers {
+    padding-left: 7%;
+    @include respond(500) {
+      padding-left: 0;
+    }
+  }
+
+  // Duration Div
+  &__duration {
+    padding-left: 7%;
+    @include respond(500) {
+      padding-left: 0;
+    }
+  }
+
+  @include respond(500) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+///////////////////////////////////////////////////////////
+////        MAIN - PLEDGES VIEW
+.pledges {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__project-description--2 {
+    margin: 3rem 0 2rem;
+  }
+}
+
+///////////////////////////////////////////////////////////
+////        MODAL
+.overlay {
+  position: absolute;
+  min-height: 210rem;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // bottom: 0;
+  // right: 0;
+  background-color: rgba($color-neutral-black, 0.5);
+  overflow: auto;
+  // background-color: white;
+  // filter: contrast(10%);
+  opacity: 0;
+  z-index: -20;
+
+  &.show {
+    opacity: 1;
+    z-index: 20;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  max-width: 73rem;
+  width: 100%;
+  // height: 30rem;
+  border-radius: 1rem;
+  background-color: white;
+  // @include transform-centralize-both;
+  position: absolute;
+  // overflow: auto;
+
+  // top: 63.5%;
+  top: -100%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  z-index: 100;
+  transition: all 0.5s 0.1s cubic-bezier(0.375, 0.885, 0.15, 1.105);
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__project-description {
+    margin-bottom: 3rem;
+  }
+
+  &.show {
+    top: 9%;
+  }
+}
+
+.modal-complete {
+  align-items: center;
+  padding: 5rem;
+  max-width: 54rem;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__description {
+    margin-bottom: 4rem;
+  }
+}
+.modal-pledges {
+  // width: 50%;
+  padding: 4rem 5rem;
+  // @include margin-centralize;
+  @include respond(750) {
+    width: 99%;
+  }
+
+  @include respond(640) {
+    padding: 3rem 2rem;
+  }
+}
